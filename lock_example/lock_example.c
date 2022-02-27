@@ -168,34 +168,42 @@ int main(int argc, char **argv) {
   double time_taken;
   t = clock();
   if (argc <= 1) {
+    printf("Running %d threads each counting to %d using no lock\n", N_THREADS, N_COUNT);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_no_lock, NULL);
     }
   } else if (!strcmp(argv[1], "no")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_no_lock, NULL);
     }
   } else if (!strcmp(argv[1], "bad")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_bad_lock, NULL);
     }
   } else if (!strcmp(argv[1], "xchg")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_xchg_lock, NULL);
     }
   } else if (!strcmp(argv[1], "cmpxchg")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_cmpxchg_lock, NULL);
     }
   } else if (!strcmp(argv[1], "tts")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_tts_xchg_lock, NULL);
     }
   } else if (!strcmp(argv[1], "backoff")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_backoff_cmpxchg_lock, NULL);
     }
   } else if (!strcmp(argv[1], "mutex")) {
+    printf("Running %d threads each counting to %d using %s lock\n", N_THREADS, N_COUNT, argv[1]);
     for (i=0; i < N_THREADS; i++) {
       pthread_create(&threads[i], NULL, count_mutex, NULL);
     }

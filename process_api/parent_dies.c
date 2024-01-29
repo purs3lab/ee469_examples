@@ -25,7 +25,7 @@ void main() {
 
     if (ret_of_fork == 0) { /* child process */
         printf("%s:%d, New process started (%d), Parent id: %d\n", __FILE__, __LINE__, getpid(), getppid());
-        printf("%s:%d, Process (%d) sleeping for 20 seconds.\n", __FILE__, __LINE__, getpid());
+        printf("%s:%d, Process (%d) sleeping for 10 seconds.\n", __FILE__, __LINE__, getpid());
         for (i=0; i < 10; i++) {
             sleep(1);
         }

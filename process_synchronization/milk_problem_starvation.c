@@ -35,6 +35,7 @@ void *check_buy_milkA( void *ptr )
      has_noteA = 1;
      pthread_yield();
      if (!has_noteB) {
+          pthread_yield();
      	if (!has_milk) {
      	  pthread_yield(); 
      	  printf("%s buying milk\n", message);
@@ -52,6 +53,7 @@ void *check_buy_milkB( void *ptr )
      has_noteB = 1;
      pthread_yield();
      if (!has_noteA) {
+          pthread_yield();
      	if (!has_milk) {
      	  pthread_yield(); 
      	  printf("%s buying milk\n", message);
